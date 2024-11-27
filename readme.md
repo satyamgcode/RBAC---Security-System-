@@ -154,6 +154,7 @@ Here are the available routes in the backend:
 
 - **authMiddleware**: Ensures the user is authenticated.
 - **adminMiddleware**: Ensures the user has an admin role.
+- **permissionMiddleware** Ensure permission allowed for moderator .
 
 ---
 
