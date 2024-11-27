@@ -13,7 +13,9 @@ const users = ref<User[]>([]);
 const currentPage = ref(1);
 const totalPages = ref(1);
 
+// @ts-ignore
 const canDelete = authStore.user?.role === "admin" || authStore.user?.permissions.includes("delete");
+// @ts-ignore
 const canEdit = authStore.user?.role === "admin" || authStore.user?.permissions.includes("update");
 
 const fetchUsers = () => {

@@ -36,7 +36,7 @@ watch(() => authStore.isLoggedIn, () => {
 <template>
   <nav class="bg-blue-600 p-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-white text-2xl font-semibold" @click="redirectToHome">MyApp</div>
+      <div class="text-white text-2xl font-semibold cursor-pointer" @click="redirectToHome">MyApp</div>
 
       <div class="hidden md:flex space-x-4">
         <template v-if="authStore.isLoggedIn">

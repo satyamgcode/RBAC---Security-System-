@@ -5,9 +5,10 @@ export interface User {
     email: string
     avatar: string
     active: 0 | 1 | 2,
-    role: 'admin' | 'user',
+    role: 'admin' | 'user' | 'moderator',
     lastLogin: Date
     loginIp: string
     createdAt: Date
     updatedAt: Date
+    permissions: string[]
 }

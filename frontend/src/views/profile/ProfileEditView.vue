@@ -22,6 +22,7 @@ const user = ref({
     avatar: authStore.user?.avatar ? API_URL + "/" + authStore.user.avatar : "https://via.placeholder.com/150",
     role: authStore.user?.role || "user",
     permissions: (authStore.user?.permissions || []).reduce((acc, permission) => {
+        // @ts-ignore
         acc[permission] = true;
         return acc;
     }, {})
@@ -29,7 +30,7 @@ const user = ref({
 
 const isAdmin = user.value.role === "admin";
 const isModerator = user.value.role === "moderator";
-const isUser = user.value.role === "user";
+// const isUser = user.value.role === "user";
 
 const avatarInput = ref < HTMLInputElement | null > (null);
 const avatarFile = ref<File | null>(null);
@@ -55,6 +56,7 @@ const handleSubmit = () => {
 
     if (isModerator || isAdmin) {
         const permissions = user.value.permissions;
+        // @ts-ignore
         formData.append("permissions", Object.keys(permissions).filter((key) => permissions[key]).join(','));
         formData.append("email", user.value.email);
     }
@@ -66,7 +68,7 @@ const handleSubmit = () => {
     isLoading.value = true;
     const userId = route.params.id as string;
 
-    updateUser(userId || authStore.user?._id, formData as unknown as UserUpdateData).then((res) => {
+    updateUser((userId || authStore.user?._id)!, formData as unknown as UserUpdateData).then((res) => {
         if (!userId) {
             authStore.updateUser(res.data);
         }
@@ -80,7 +82,7 @@ onBeforeMount(() => {
     if (route.params.id) {
         const userId = route.params.id as string;
 
-        if (authStore.user.role === 'moderate' && !authStore.user.permissions.includes('edit')) {
+        if (authStore.user?.role === 'moderator' && !authStore.user.permissions.includes('edit')) {
             router.push({ name: 'profile' })
             return
         }
@@ -92,6 +94,7 @@ onBeforeMount(() => {
                 email: res.data.email,
                 avatar: res.data.avatar ? API_URL + "/" + res.data.avatar : "https://via.placeholder.com/150",
                 role: res.data.role,
+                // @ts-ignore
                 permissions: (res.data.permissions || []).reduce((acc, permission) => {
                     acc[permission] = true;
                     return acc;
@@ -159,16 +162,19 @@ onBeforeMount(() => {
                     
                     <div class="grid grid-cols-3 gap-4">
                         <div class="flex items-center">
+                            <!-- @vue-expect-error -->
                             <input type="checkbox" id="read" v-model="user.permissions.read" value="read"
                                 class="mr-2">
                             <label for="read">Read</label>
                         </div>
                         <div class="flex items-center">
+                            <!-- @vue-expect-error -->
                             <input type="checkbox" id="update" v-model="user.permissions.update" value="update"
                                 class="mr-2">
                             <label for="edit">Update</label>
                         </div>
                         <div class="flex items-center">
+                            <!-- @vue-expect-error -->
                             <input type="checkbox" id="delete" v-model="user.permissions.delete" value="delete"
                                 class="mr-2">
                             <label for="delete">Delete</label>
