@@ -7,6 +7,49 @@ This is a full-stack user management system, built with the following technologi
 - **Other**: Nodemailer for email verification and password reset functionality
 - **Package Manager**: pnpm
 
+### **Project Description: Role-Based Access Control (RBAC) System**
+
+This project demonstrates a secure and robust **Role-Based Access Control (RBAC) System**, designed to manage user authentication, authorization, and resource access based on assigned roles.
+
+### **Features and Functionality**
+
+1. **User Authentication and Registration**  
+   - Users can securely create an account using their email ID.  
+   - A verification email is sent to confirm the user's identity before they can access their account.  
+   - Users can sign in to their accounts using valid credentials and securely log out when needed.  
+
+2. **Secure Session Management**  
+   - Utilizes **JWT (JSON Web Token)** to handle authentication and manage sessions securely.  
+   - Ensures that sensitive user data remains protected during interactions.  
+
+3. **Role-Based Access Control (RBAC)**  
+   - Roles include **Admin**, **Moderator**, and **User**, each with specific permissions.  
+   - Access to resources is determined dynamically based on the assigned role.  
+
+4. **Admin Privileges**  
+   - Admins have full control over the system.  
+   - Admins can view all user details, edit user profiles, delete users, and manage user roles.  
+   - Admins can assign or modify roles for users, including granting Moderator privileges.  
+
+5. **Moderator Permissions**  
+   - Moderators have customizable permissions for resources, including **Read**, **Edit**, and **Delete** functionalities, which are granted by Admins.  
+
+6. **User Dashboard**  
+   - Once logged in, users can view their profile details, ensuring a personalized experience.  
+
+### **Technology Stack**
+- **Authentication & Authorization:** JWT for secure token-based authentication.  
+- **RBAC Implementation:** Dynamic role assignment and permission management for granular access control.  
+- **Email Verification:** Ensures users verify their email before gaining full access.  
+
+### **Use Case**  
+This project is ideal for applications requiring a secure authentication system and precise control over user access, such as **content management systems**, **enterprise-level applications**, or **multi-user platforms**.
+
+### **Security Measures**
+- Secure password storage using hashing algorithms.
+- Token-based session management to minimize security risks.
+- Email-based account verification to prevent unauthorized access.
+
 ## Table of Contents
 
 1. [Demo](#demo)
