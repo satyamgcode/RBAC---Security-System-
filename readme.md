@@ -5,7 +5,7 @@ This is a full-stack user management system, built with the following technologi
 - **Backend**: Node.js, Express, MongoDB
 - **Frontend**: Vue.js, Vue Router, Pinia
 - **Other**: Nodemailer for email verification and password reset functionality
-- **Package Manager**: pnpm
+- **Package Manager**: npm
 
 ### **Project Description: Role-Based Access Control (RBAC) System**
 
@@ -67,8 +67,8 @@ This project is ideal for applications requiring a secure authentication system 
 [Click here For Demo](https://mern-user-management-x79a.vercel.app/)
 
 ```bash
-Admin: mailforward347@gmail.com
-Pass: 123456
+Admin: guptasatyamcode@gmail.com
+Pass: qwertyu
 ```
 
 ## Project Setup
@@ -77,9 +77,9 @@ This project is divided into two parts: the backend and the frontend. The backen
 
 ### Prerequisites
 
-- Install **pnpm** (if you haven't already):
+- Install **npm** (if you haven't already):
   ```bash
-  npm install -g pnpm
+  npm install -g npm
   ```
 
 ---
@@ -134,11 +134,11 @@ VITE_API_URL=http://localhost:5000
      ```
    - Install dependencies:
      ```bash
-     pnpm install
+     npm install
      ```
    - Start the development server:
      ```bash
-     pnpm dev
+     npm dev
      ```
 
 2. **Frontend**:
@@ -148,11 +148,11 @@ VITE_API_URL=http://localhost:5000
      ```
    - Install dependencies:
      ```bash
-     pnpm install
+     npm install
      ```
    - Start the frontend development server:
      ```bash
-     pnpm dev
+     npm dev
      ```
 
 ---
@@ -164,14 +164,14 @@ VITE_API_URL=http://localhost:5000
    - Build the frontend for production:
      ```bash
      cd frontend
-     pnpm build
+     npm build
      ```
 
 2. **Backend**:
    - Start the backend for production:
      ```bash
      cd backend
-     pnpm start
+     npm start
      ```
 
 ---
